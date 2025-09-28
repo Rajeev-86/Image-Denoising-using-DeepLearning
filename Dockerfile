@@ -26,4 +26,5 @@ CMD ["torchserve", \
      "--start", \
      "--ncs", \
      "--model-store", "/home/model-server/model_store", \
-     "--models", "model_unet=UNET.mar,model_runet=R-UNET.mar,model_arunet=A-R-UNET.mar"]
+     "--models", "model_unet=UNET.mar,model_runet=R-UNET.mar,model_arunet=A-R-UNET.mar", \
+     "--disable-token-auth"]
