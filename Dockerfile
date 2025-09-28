@@ -14,9 +14,9 @@ EXPOSE 8080
 
 # 3. Installing gdown, downloading models and immediately uninstalling it for a smaller image
 RUN pip install --no-cache-dir gdown && \
-     gdown 1x9lGntRiYsNb-dYf1SugGGwnoGa_oQes -O model_store/UNET.mar && \
-     gdown 1Y_P77RtNnC1StUeBGlONuNGAW5rFq02S -O model_store/R-UNET.mar && \
-     gdown 1VYvAh5S5MQICbqmQkNJ1Epdmcm5VgVWb -O model_store/A-R-UNET.mar && \
+     gdown 1h0N5fQtWwzdn4TEH_CJZDlE5xBI7-7X_ -O model_store/UNET.mar && \
+     gdown 1ozPgC_Cha99D5yYl4ES90LOd_Jo6p_fQ -O model_store/R-UNET.mar && \
+     gdown 1dr0Oe5mkpb_o7rarXGcolXgobqL5T9S0 -O model_store/A-R-UNET.mar && \
      pip uninstall gdown -y
 
 USER model-server
