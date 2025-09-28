@@ -17,8 +17,8 @@ jobs:
       - name: Push to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          HF_USERNAME: your_huggingface_username
-          SPACE_NAME: your_space_name
+          HF_USERNAME: Rexy-3d
+          SPACE_NAME: Denoiser-Server
         run: |
           # The $HF_TOKEN is used as the password for authentication
           git push -f https://${{ env.HF_USERNAME }}:${{ env.HF_TOKEN }}@huggingface.co/spaces/${{ env.HF_USERNAME }}/${{ env.SPACE_NAME }} main
