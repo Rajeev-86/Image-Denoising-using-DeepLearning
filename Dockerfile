@@ -3,24 +3,23 @@ FROM pytorch/torchserve:0.12.0-cpu
 
 USER root 
 
-# 2. Install gdown and immediately uninstall it for a smaller image
-RUN pip install --no-cache-dir gdown && pip uninstall gdown -y
-
-# 3. Install other dependencies and clean up
+# 2. Install other dependencies and clean up
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt && rm /tmp/requirements.txt
 
 WORKDIR /home/model-server
 RUN mkdir model_store
 
-# 4. Download models using gdown
-RUN gdown 1x9lGntRiYsNb-dYf1SugGGwnoGa_oQes -O model_store/UNET.mar
-RUN gdown 1Y_P77RtNnC1StUeBGlONuNGAW5rFq02S -O model_store/R-UNET.mar
-RUN gdown 1VYvAh5S5MQICbqmQkNJ1Epdmcm5VgVWb -O model_store/A-R-UNET.mar
+# 3. Installing gdown, downloading models and immediately uninstalling it for a smaller image
+RUN pip install --no-cache-dir gdown && \
+     gdown 1x9lGntRiYsNb-dYf1SugGGwnoGa_oQes -O model_store/UNET.mar && \
+     gdown 1Y_P77RtNnC1StUeBGlONuNGAW5rFq02S -O model_store/R-UNET.mar && \
+     gdown 1VYvAh5S5MQICbqmQkNJ1Epdmcm5VgVWb -O model_store/A-R-UNET.mar && \
+     pip uninstall gdown -y
 
 USER model-server
 
-# 5. Start TorchServe with all models
+# 4. Start TorchServe with all models
 CMD ["torchserve", \
      "--start", \
      "--ncs", \
