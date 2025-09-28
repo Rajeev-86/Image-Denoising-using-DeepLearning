@@ -4,7 +4,8 @@ emoji: 🚀
 colorFrom: indigo
 colorTo: purple
 sdk: docker
-app_file: Dockerfile  # <-- **CRITICAL: Set this to your main application file**
+app_port: 8080
+app_file: Dockerfile 
 pinned: false
 ---
 

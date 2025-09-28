@@ -10,6 +10,8 @@ RUN pip install -r /tmp/requirements.txt && rm /tmp/requirements.txt
 WORKDIR /home/model-server
 RUN mkdir model_store
 
+EXPOSE 8080
+
 # 3. Installing gdown, downloading models and immediately uninstalling it for a smaller image
 RUN pip install --no-cache-dir gdown && \
      gdown 1x9lGntRiYsNb-dYf1SugGGwnoGa_oQes -O model_store/UNET.mar && \
