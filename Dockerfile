@@ -17,7 +17,9 @@ RUN pip install --no-cache-dir gdown && \
      gdown 1yZfaeCagywUGfObCyhwNvd9hYVdXH84t -O model_store/UNET.mar && \
      gdown 1632np236SU0ZFM9Li4EbcwpNyLPcio9A -O model_store/R-UNET.mar && \
      gdown 1LyE6FQzY6wQI0nWwj3s1O29jseiF5-xo -O model_store/A-R-UNET.mar && \
-     pip uninstall gdown -y
+     pip uninstall gdown -y && \
+     rm -rf /root/.cache/pip && \
+     rm -rf /var/lib/apt/lists/*
 
 USER model-server
 
