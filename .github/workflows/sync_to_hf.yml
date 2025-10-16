@@ -2,8 +2,13 @@ name: Sync to Hugging Face Hub
 
 on:
   push:
-    branches: [main] # Trigger on pushes to the main branch
-  workflow_dispatch: # Allows manual trigger from the Actions tab
+    branches: [main]
+    paths:
+      - 'Dockerfile'
+      - 'requirements.txt'
+      - 'model-server/**'
+      - '.github/workflows/sync_to_hf.yml'
+  workflow_dispatch: 
 
 jobs:
   sync-to-hub:
@@ -11,8 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Ensure all history is fetched
-          lfs: true # Needed if you use Git LFS for large files
+          fetch-depth: 0
+          lfs: true
 
       - name: Push to Hugging Face Space
         env:
