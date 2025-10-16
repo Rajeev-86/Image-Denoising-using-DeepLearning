@@ -2,11 +2,7 @@ name: Sync to Hugging Face Hub
 
 on:
   push:
-    branches: [main]
-    paths:
-      - 'Dockerfile'
-      - 'requirements.txt'
-      - '.github/workflows/sync_to_hf.yml' 
+    branches: [main] # Trigger on pushes to the main branch
   workflow_dispatch: # Allows manual trigger from the Actions tab
 
 jobs:
