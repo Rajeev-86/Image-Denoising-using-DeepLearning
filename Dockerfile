@@ -1,7 +1,7 @@
 # 1. Pinned Base Image
 FROM pytorch/torchserve:0.12.0-cpu
 
-USER root 
+USER root
 
 # 2. Install other dependencies and clean up
 COPY requirements.txt /tmp/requirements.txt
