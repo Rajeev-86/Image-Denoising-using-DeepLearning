@@ -6,6 +6,8 @@ import io
 import time
 import logging
 import torch.nn.functional as F
+import numpy as np
+from skimage.metrics import peak_signal_noise_ratio, structural_similarity
 
 logger = logging.getLogger(__name__)
 
@@ -41,12 +43,12 @@ class ImageHandler(BaseHandler):
         output_tensor_resized = output_tensor
         if output_tensor.shape != input_tensor.shape:
              output_tensor_resized = F.interpolate(
-                 output_tensor.unsqueeze(0), 
+                 output_tensor.unsqueeze(0),
                  size=input_tensor.shape[-2:],
-                 mode='bilinear', 
+                 mode='bilinear',
                  align_corners=False
              ).squeeze(0)
-        
+
         pixel_difference = torch.mean(torch.abs(input_tensor - output_tensor_resized)).item()
         logger.info(f"OUTPUT_QUALITY: denoising_intensity={pixel_difference:.4f}")
 

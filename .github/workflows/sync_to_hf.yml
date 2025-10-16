@@ -6,7 +6,6 @@ on:
     paths:
       - 'Dockerfile'
       - 'requirements.txt'
-      - 'README.md'
       - '.github/workflows/sync_to_hf.yml' 
   workflow_dispatch: # Allows manual trigger from the Actions tab
 
