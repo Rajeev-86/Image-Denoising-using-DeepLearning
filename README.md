@@ -36,6 +36,7 @@ The objective of this project is to develop and evaluate a robust image denoisin
 ##3. Project Structure
 
 ├── .gitignore \
+├── .gitattributes \
 ├── .github/workflows \
 │ ├── sync_to_hf.yml \
 ├── Dockerfile \
