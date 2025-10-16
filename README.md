@@ -31,28 +31,26 @@ The objective of this project is to develop and evaluate a robust image denoisin
 
 ##2. Few Results
 
-![Alt text](images/filename.png)
+![Showcasing few test results](images/test-collage.png)
 
 ##3. Project Structure
 
-├── .gitignore
-├── .github/workflows
-│   ├── sync_to_hf.yml
-├── Dockerfile
+├── .gitignore \
+├── .github/workflows \
+│ ├── sync_to_hf.yml \
+├── Dockerfile \
 ├── api-test.py  
-├── handler.py   
-├── requirements.txt
-├── images   
-│
-├── README.md
-└── (maybe some sample outputs/denoised images)
+├── handler.py \
+├── requirements.txt \
+├── images \
+└── README.md 
 
-[Dataset Preparation](https://drive.google.com/file/d/1hY0OBv0TI8dsP5Y2Le6IT9kFwPM_t8_V/view?usp=sharing)
-[UNET_training](https://www.kaggle.com/code/rajeev86/training-unet-for-image-denoising)
-[Residual-UNET_training](https://www.kaggle.com/code/rajeev86/training-residual-unet-for-image-denoising)
-[CBAM-Residual-UNET_training](https://www.kaggle.com/code/rajeev86/training-unet-with-residuals-and-cbam-layers)
-[TorchScript_comparison](https://drive.google.com/file/d/1JC6WIi59fppT78v5kl26VSD4tX73ikgg/view?usp=sharing)
-[Model Archiving](https://drive.google.com/file/d/1X4lMJYiC8ps3170X-Jj5-YvnaIDDvnbx/view?usp=sharing)
+- [Dataset Preparation](https://drive.google.com/file/d/1hY0OBv0TI8dsP5Y2Le6IT9kFwPM_t8_V/view?usp=sharing) 
+- [UNET_training](https://www.kaggle.com/code/rajeev86/training-unet-for-image-denoising)
+- [Residual-UNET_training](https://www.kaggle.com/code/rajeev86/training-residual-unet-for-image-denoising)
+- [CBAM-Residual-UNET_training](https://www.kaggle.com/code/rajeev86/training-unet-with-residuals-and-cbam-layers)
+- [TorchScript_comparison](https://drive.google.com/file/d/1JC6WIi59fppT78v5kl26VSD4tX73ikgg/view?usp=sharing)
+[- Model Archiving](https://drive.google.com/file/d/1X4lMJYiC8ps3170X-Jj5-YvnaIDDvnbx/view?usp=sharing)
 
 ##4. Dataset Used
 
@@ -66,8 +64,8 @@ Structured Artifacts: JPEG compression with randomized quality (∈[70,95]).
 
 Due to the complex, non-linear nature of this hybrid noise model, we quantified the overall degradation using the Effective Noise Level (σ eff), defined as the Standard Deviation of the entire noise residual (y−x) across the validation set. The measured effective noise level for the challenging dataset was σeff =79.32 (scaled to 0-255). All performance metrics (PSNR, SSIM) presented below are reported against this highly degraded baseline.
 
-[Original Berkeley Segmentation Dataset 500 (BSDS500)](https://data.vision.ee.ethz.ch/cvl/DIV2K/)
-[GDrive link for our modified Dataset](https://drive.google.com/drive/folders/1AObLCZGTHvtcv-lZFGPBA8k8xgC1k4_w?usp=sharing)
+- [Original Berkeley Segmentation Dataset 500 (BSDS500)](https://data.vision.ee.ethz.ch/cvl/DIV2K/) \
+- [GDrive link for our modified Dataset](https://drive.google.com/drive/folders/1AObLCZGTHvtcv-lZFGPBA8k8xgC1k4_w?usp=sharing)
 
 ##5. Model Architectures
 
@@ -88,7 +86,7 @@ Due to the complex, non-linear nature of this hybrid noise model, we quantified 
 ##7. Optimization
 Comparing ordinary serlialization vs TorchScript inference time
 
-| Model                    | Avg. Inference Time (ms) |
+| Model                    | Speedup |
 | -------------------------| ------------------------ |
 | U-Net                    | 39.18 %                  |
 | Residual U-Net           | 43.77 %                  |
@@ -102,9 +100,9 @@ Containerization: Docker
 
 Deployment Platform: Hugging Face Spaces
 
-Artifacts: .mar model files stored in [Gdrive link](https://drive.google.com/drive/folders/1Arnlrjdxqd0zBaIC4ECigDxxSrgqyAHX?usp=sharing)
+HuggingFace Space link: [here](https://huggingface.co/spaces/Rexy-3d/Denoiser-Server)
 
-[HuggingFace Space link](https://huggingface.co/spaces/Rexy-3d/Denoiser-Server)
+Artifacts: .mar model files stored [here](https://drive.google.com/drive/folders/1Arnlrjdxqd0zBaIC4ECigDxxSrgqyAHX?usp=sharing)
 
 ##8. Frontend (Next.js)
 
@@ -114,7 +112,7 @@ Platform: Vercel
 
 Provides a simple web interface for uploading noisy images and visualizing denoised outputs.
 
-[Vercel webpage Link](https://denoiserbyrajeev.vercel.app/)
+Open Web Frontend [here](https://denoiserbyrajeev.vercel.app/)
 
 ##9. Results:
 
@@ -126,16 +124,16 @@ Provides a simple web interface for uploading noisy images and visualizing denoi
 
 ##10. References
 
-[U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597)
-[Recurrent Residual Convolutional Neural Network based on U-Net (R2U-Net) for Medical Image Segmentation](https://arxiv.org/pdf/1802.06955)
-[Layer Normalization](https://arxiv.org/abs/1607.06450)
-[CBAM: Convolutional Block Attention Module](https://arxiv.org/abs/1807.06521)
-[Attention-based UNet enabled Lightweight Image Semantic Communication System over Internet of Things](https://arxiv.org/html/2401.07329v1)
-[Application of ResUNet-CBAM in Thin-Section Image Segmentation of Rocks](https://www.mdpi.com/2078-2489/15/12/788)
+[1] [U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597)\
+[2] [Recurrent Residual Convolutional Neural Network based on U-Net (R2U-Net) for Medical Image Segmentation](https://arxiv.org/pdf/1802.06955)\
+[3] [Layer Normalization](https://arxiv.org/abs/1607.06450)\
+[CBAM: Convolutional Block Attention Module](https://arxiv.org/abs/1807.06521)\
+[4] [Attention-based UNet enabled Lightweight Image Semantic Communication System over Internet of Things](https://arxiv.org/html/2401.07329v1)\
+[5] [Application of ResUNet-CBAM in Thin-Section Image Segmentation of Rocks](https://www.mdpi.com/2078-2489/15/12/788)
 
 ##11. Author
 
 Rajeev Ahirwar
 
-[Linkedin](https://www.linkedin.com/in/86thrajeev/)
+[Linkedin](https://www.linkedin.com/in/86thrajeev/)\
 [GitHub](https://github.com/Rajeev-86)
