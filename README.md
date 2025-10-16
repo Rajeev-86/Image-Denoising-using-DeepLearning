@@ -123,7 +123,7 @@ Open Web Frontend [here](https://denoiserbyrajeev.vercel.app/)
 | Residual U-Net        | 28.7630      | 0.8415      | Better texture recovery |
 | Residual U-Net + CBAM | **29.0086**  | **0.8485**  | Best performance        |
 
-##10. References
+##10. References 
 
 [1] [U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597)\
 [2] [Recurrent Residual Convolutional Neural Network based on U-Net (R2U-Net) for Medical Image Segmentation](https://arxiv.org/pdf/1802.06955)\
